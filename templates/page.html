@@ -1,0 +1,29 @@
+﻿{% extends "base.html" %}
+{% block content %}
+ <div id="main-container" class="container clearfix">
+	<section class="post-left">
+		<div class="breadcrumb">您的位置： <a itemprop="breadcrumb" href="/">首页</a> >> <span class="current">关于博主</span></div>
+		<div class="post-main clearfix">
+			<h1 class="post-title">关于博主</h1>
+			<div class="post-con clearfix">
+				<div class="article-meta"> <span class="item">2020-05-30</span></div>
+				<article class="article-content">
+					<P>个人简介：软件测试工程师，2年web端测试经验，3年服务端测试经验</P>
+					<p>测试技能：用例设计、接口测试、自动化测试、工具研发、压力测试、安全测试</p>
+					<p>联系邮箱：weibo0920@gmail.com</p>
+				</article>
+
+			</div>
+
+		</div>
+				<!-- /文章 -->
+	</section>
+	<!-- /post-left -->
+	<!-- /post-right -->
+    <aside class="post-right hidden-xs">
+        {% include 'right.html' %}
+    </aside>
+</div>
+<!-- /主体 -->
+<!-- 底部 -->
+{% endblock %}

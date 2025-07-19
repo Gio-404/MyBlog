@@ -1,0 +1,75 @@
+{% load staticfiles %}
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-title" content="Gio's Blog|掌缘生灭">
+<title>Gio's Blog|掌缘生灭</title>
+    <link rel="icon" href='{% static "images/ico.ico" %}' type="images/x-icon">
+    <link rel="shortcut icon" href= '{% static "images/ico.ico" %}' type="image/x-icon"/>
+        <style>
+        body{
+            background: url("/static/images/background.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            opacity:0.8;
+            width: 73%;
+        }
+
+    </style>
+<link rel='stylesheet' id='bootstrap-css'  href='{% static "css/bootstrap.min.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css'  href='{% static "css/font-awesome.min.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='stylesheet-css'  href='{% static "css/style.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='raxus-css'  href='{% static "css/raxus.css" %}' type='text/css' media='all' />
+<link rel='stylesheet' id='open-social-style-css'  href='{% static "css/os.css" %}' type='text/css' media='all' />
+<meta name='robots' content='index,follow' />
+<meta name="keywords" content="软件测试,测试开发,网络安全,QA,Python">
+<meta name="description" content="分享、总结、提高、记录">
+</head>
+
+<body class="home blog site-layout-2">
+
+<!-- 头部 -->
+<header class="fix-wrap" id="fix-wrap" style="width:62%;margin-left: 19%;">
+<div class="fix-main clearfix pr" id="fix-main"> <a href="/" class="index-logo">
+    <img src='{% static "picture/black-logo.png" %}' alt="Gio's Blog|掌缘生灭"></a>
+<nav class="nav fl">
+    <ul id="fix-list" class="fix-list clearfix">
+
+<li id="menu-item-24086" class="menu-item"><a href="/">首页</a></li>
+        {% for category in allcategory %}
+        <li id="menu-item-117720" class="menu-item">
+            <a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a>
+        </li>
+        {% endfor %}
+<li id="menu-item-24087" class="menu-item"><a href="/about/">关于博主</a></li>
+
+</ul>
+</nav>
+    <div class="input-group">
+    <form method="get" class="index-search  hidden-xs" action="{% url 'index' %}s/" >
+        <input class="form-control input-lg" name="search" type="text" style="width:240px;height:40px;" placeholder="输入关键字" value="">
+        <button class="btn-deafult" type="submit">搜索</button>
+<!--            <i class="fa fa-search" aria-hidden="true"></i></button>-->
+    </form>
+    </div>
+</div>
+</header>
+{% block content %}
+{% endblock %}
+<footer class="footer" style="width:100%">
+<div class="copyright"> © 2020-2021 · All Rights Reserved
+    · <a href="https://www.wbtester.com">Gio's blog</a>
+    · <a href="http://beian.miit.gov.cn/" target="_blank">京ICP备20018743号</a></div>
+</footer>
+<script type="text/javascript" src="{% static 'js/view-history.js' %}"></script>
+<script type='text/javascript' src='{% static "js/jquery.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/raxus-slider.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bj-lazy-load.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/os.js" %}'></script>
+
+</body>
+</html>
